@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+            <meta charset="UTF-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link rel="stylesheet" href="estilos.css">
+            <title>Página web de SMNova</title>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="Logo SMNova" height="60">
+        </a>
+      </div>
+      <div class="nav-derecha">
+        <button class="hamburguesa" id="btn-menu" onclick="menuMovil()">☰</button>
+        <ul class="menu" id="menu">
+          <li><a href="perfil-usuario.html">Perfil de muestra</a></li>
+          <li><a href="torneos.html">Torneos</a></li>
+          <li><a href="como-funciona.html">Manual</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <a href="login.html" class="btn-login">Iniciar sesión</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+            <!-- BÚSQUEDA: barra de búsqueda con fondo destacado -->
+<section class="busqueda">
+
+  <div class="busqueda-header">
+    <h1>Buscá un torneo</h1>
+    <input type="text" class="barra-busqueda" id="input-busqueda" placeholder="Buscar por nombre o disciplina...">
+  </div>
+ <!-- CONTENIDO: filtros a la izquierda, resultados a la derecha
+         En celular se apilan en columna (CSS base)
+         En escritorio van en fila (CSS dentro del @media min-width) -->
+  <div class="contenido-torneos">
+      <!-- ASIDE: contenido secundario de apoyo (los filtros)
+           <aside> indica que este contenido es complementario al principal -->
+            <!-- BÚSQUEDA: barra de búsqueda con fondo destacado -->
+     <aside class="filtros">
+        <h3>Filtros</h3>
+
+        <div class="grupo-filtro">
+          <p>Disciplina</p>
+          <label><input type="checkbox"> Fútbol</label>
+          <label><input type="checkbox"> Ajedrez</label>
+          <label><input type="checkbox"> Videojuegos</label>
+          <label><input type="checkbox"> Cartas</label>
+        </div>
+
+        <div class="grupo-filtro">
+          <p>Formato</p>
+          <label><input type="checkbox"> Liga</label>
+          <label><input type="checkbox"> Eliminación directa</label>
+          <label><input type="checkbox"> Sistema suizo</label>
+        </div>
+
+        <div class="grupo-filtro">
+          <p>Estado</p>
+          <label><input type="checkbox"> En curso</label>
+          <label><input type="checkbox"> Inscripción abierta</label>
+          <label><input type="checkbox"> Finalizado</label>
+        </div>
+      </aside>
+
+      <!-- LISTA DE TORNEOS: cada torneo es un <article>
+           porque es contenido independiente y reutilizable -->
+      <div class="lista-torneos">
+
+        <article class="tarjeta-torneo">
+          <span class="sport">Voleyball</span>
+          <h3>Liga Livo Sur</h3>
+          <p>32 equipos - Fecha 4 de 12</p>
+          <span class="curso"> En curso</span>
+        </article>
+
+        <article class="tarjeta-torneo">
+          <span class="sport">Ajedrez</span>
+          <h3>Copa Apertura</h3>
+          <p>18 jugadores - Sistema suizo</p>
+          <span class="abierto">Inscripciones abiertas</span>
+        </article>
+
+        <article class="tarjeta-torneo">
+          <span class="sport">Videojuegos</span>
+          <h3>Regional FIFA26</h3>
+          <p>5 equipos - Eliminación directa</p>
+          <span class="proximo">Próximamente</span>
+        </article>
+
+        <article class="tarjeta-torneo">
+          <span class="sport">Cartas</span>
+          <h3>Liga de Cartas Estratégicas</h3>
+          <p>12 participantes - Liga</p>
+          <span class="abierto">Inscripciones abiertas</span>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">SMNOVA</div>
+    <div class="footer-links">
+      <a href="contacto.html">Contacto</a>
+      <a href="como-funciona.html">Manual</a>
+      <span>Instituto Tecnológico Superior Arias-Balparda</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
