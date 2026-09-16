@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="estilos.css">
+  <title>SMNOVA - Organizá tus torneos</title>
+</head>
+<body>
+
+  <!--
+       El header deberían saber q es -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo SMNova" height="60"> 
+                </a>
+            </div>
+            <div class="nav-derecha">
+            <!-- botón hamburguesa: visible solo en celular,
+                al tocarlo muestra/oculta el menú con JS -->
+                <button class="hamburguesa" id="btn-menu" onclick="menuMovil()">☰</button>
+                <ul class="menu" id="menu">
+                    <li><a href="torneos.html">Torneos</a></li>
+                    <li><a href="como-funciona.html">Manual</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="perfil-usuario.html">Perfil</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <img src="testpfp.png" alt="Avatar" class="avatar"> 
+        <h2 class="nombre-usuario">Dippy_Studios</h2> <span class="badge">Nuevo</span>
+
+        <div class="contenido-perfil">
+            <nav class="nav-derecha">
+                <ul class="menu-perfil">
+                    <li><a href="">Sobre mi</a></li>
+                    <li><a href="">Torneos</a></li>
+                    <li><a href="">Resultados</a></li>
+                </ul>
+            </nav>
+           <article class="tarjeta-perfil">
+                <h3>Sobre mi</h3>
+                <p>Mensaje de relleno</p>
+            </article>
+            <article class="tarjeta-perfil">
+                <span>Dippy_Studios</span>
+                <p>Sopaipa</p>
+            </article>
+        </div>
+    </main>

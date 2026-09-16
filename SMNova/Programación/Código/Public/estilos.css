@@ -1,0 +1,764 @@
+/* 
+   Todo lo que está FUERA de un @media es el diseño
+   pensado para celular. Después, con @media (min-width),
+   se agregan/ajustan los estilos para las pcs.
+ */
+
+body {
+  background-color: #0f0e17;
+  font-family: Arial, sans-serif; /* fuente de toda la página */
+  margin: 0;                      /* saca el margen blanco que pone el navegador por defecto */
+}
+
+/*NAVBAR  */
+.navbar {
+  display: flex;
+  flex-direction: column;   /* en cel: logo arriba, menú abajo */
+  align-items: center;
+  gap: 12px;         /*separación tanto para las filas como para las columnas */
+  background-color: #0F0E17;
+  color: white;
+  padding: 16px;
+}
+
+.nav-derecha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Añade un fondo gris cuando el cursor pasa por encima de un link en la barra denavegación*/
+.navbar a:hover {
+  color: rgb(59, 51, 218);
+}
+
+.menu {
+  display: none;            /* en cel el menú está oculto por defecto */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* btn de "Incio de sesion" en el nav */
+.btn-login {
+  background-color: #ffefc2;
+  color: #2c3e50;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* btn hamburguesa: visible por defecto en cel */
+.hamburguesa {
+  display: block;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/*  HERO */
+.hero {
+  background-color: #1A1A2E;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #DEDEDD;
+  margin-bottom: 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-botones {
+  display: flex;
+  flex-direction: column;  /* en cel van uno abaja del otro */
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-buscar {
+  background-color: z#7761A9;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.btn-crear {
+  background-color: transparent;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid white;
+}
+
+/*  TORNEOS ACTIVOS */
+.torneos-activos {
+  background-color: #1A1A2E;
+  padding: 40px 20px;
+}
+
+.seccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.seccion-header h2 {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+}
+
+.seccion-header a {
+  color: #72CBD7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contenedor-tarjetas {
+  display: flex;
+  flex-direction: column;  /* las tarjetas se pegan */
+  gap: 20px;
+}
+
+.tarjeta {
+  background-color: #25253A;
+  border-radius: 16px;
+  padding: 24px;
+  flex: 1;
+  min-width: 0;
+}
+.link-tarjeta {
+  text-decoration: none;
+  color: inherit;
+  display: flex;    /* para que también reparta el espacio como flex */
+  flex: 1;           /* ahora esta instrucción sí le llega al hijo */
+  min-width: 0;
+}
+.sport {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #72CBD7;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.tarjeta h3 {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.tarjeta p {
+  color: #DEDEDD;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.tarjeta h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+.curso {
+  color: #7ad772;
+  font-weight: bold;
+}
+
+.abierto {
+  color: #F0EBC4;
+  font-weight: bold;
+}
+
+.proximo {
+  color: #8474B7;
+  font-weight: bold;
+}
+
+/*  COMO FUNCIONA */
+.como-funciona {
+  background-color: #0F0E17;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.como-funciona h2 {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* como funciona— pasos numerados
+   En celular van en columna (uno abajo del otro)
+   porque la pantalla es angosta y no entran en fila.
+   En escritorio (dentro del @media) se cambia a fila */
+.pasos {
+  display: flex;
+  flex-direction: column; /* celular: apilados */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* cada paso individual
+   max-width limita el ancho para que el texto
+   no se estire demasiado en pantallas grandes */
+.paso {
+  text-align: center;
+  padding: 20px;
+  max-width: 280px;
+}
+.numero {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #7761A9;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.paso h3 {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.paso p {
+  color: #DEDEDD;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* pie,footer */
+.footer {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;  /* en el cel: logo arriba, links abajo */
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  background-color: #0F0E17;
+  border-top: 1px solid #25253A;
+}
+
+.footer-logo {
+  color: #7761A9;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #DEDEDD;
+  font-size: 13px;
+}
+
+.footer-links span {
+  color: #DEDEDD;
+  font-size: 13px;
+}
+
+/*  LOGIN */
+.login {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.tarjetalogin {
+  background-color: #1A1A2E;
+  border-radius: 20px;
+  padding: 40px 24px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.tarjetalogin h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+/* CREAR TORNEO */
+.crear {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.tarjeta-crear {
+  background-color: #1A1A2E;
+  border-radius: 20px;
+  padding: 40px 24px;
+  width: 100%;
+  max-width: 460px;   /* un poco más ancha que el login, porque tiene más campos */
+}
+
+.tarjeta-crear h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+/* el select necesita el mismo estilo que ya tienen los input,
+   para que se vea consistente con el resto del formulario */
+.espacio select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #25253A;
+  background-color: #0F0E17;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.espacio {
+  margin-bottom: 20px;
+}
+
+.espacio label {
+  display: block;
+  color: #DEDEDD;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.espacio input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #25253A;
+  background-color: #0F0E17;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box; /* para que el padding no rompa el ancho */
+}
+
+.btn-ingresar {
+  width: 100%;
+  padding: 14px;
+  background-color: #7761A9;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.registro {
+  text-align: center;
+  color: #DEDEDD;
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.registro a {
+  color: #72CBD7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* BUSQUEDA DE TORNEOS */
+.busqueda-header {
+  padding: 30px 20px 16px;
+  background-color: #1A1A2E;
+}
+
+.busqueda-header h1 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.barra-busqueda {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #25253A;
+  color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.barra-busqueda::placeholder {
+  color: #8474B7;
+}
+
+/* en cel: filtros arriba, lista de torneos abajo (columna) */
+.contenido-torneos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  
+}
+.contenido-perfil{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+}
+
+
+.filtros {
+  background-color: #1A1A2E;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.filtros h3 {
+  color: white;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.grupo-filtro {
+  margin-bottom: 16px;
+}
+
+.grupo-filtro p {
+  color: #72CBD7;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.grupo-filtro label {
+  display: block;
+  color: #DEDEDD;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.lista-torneos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tarjeta-torneo {
+  background-color: #25253A;
+  border-radius: 16px;
+  padding: 24px;
+}
+/* Detalle de Torneos(usamos la misma lógica que el hero */
+
+
+/* centra los títulos "próximos enfrentamientos" y
+   "tabla de posiciones" como  usan .seccion-header pero
+   no tienen el link "Ver todo -Z" al lado como en inicio,
+   entonces justify-content: center los centra */
+.enfrentamientos .seccion-header,
+.posiciones .seccion-header {
+  justify-content: center;
+}
+.info-torneo {
+  background-color: #1A1A2E;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.info-torneo h1 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.info-torneo p {
+  color: #DEDEDD;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+/* Tabla de Posiciones  */
+.posiciones {
+  overflow-x: auto;   /* si la tabla no entra en pantallas chicas, aparece scroll horizontal */
+  padding: 20px;
+}
+/* la tabla en general: que ocupe todo el ancho y no tenga bordes dobles */
+table {
+  width: 100%;
+  border-collapse: collapse;  /* junta los bordes duplicados en uno solo */
+  background-color: #1A1A2E;  
+}
+
+/* los encabezados (posición,equipo,pJ, etc.) */
+th {
+  background-color: #25253A;   
+  color: #72CBD7;            
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+/* las celdas de datos */
+td {
+  padding: 12px;
+  color: #DEDEDD;             
+  border-bottom: 1px solid #25253A;  
+}
+/*PERFIL DE USUARIO*/
+/* border-radius añade bordes curvos a la imagen del avatar, 50% lo hace redondo*/
+.avatar {
+  vertical-align: middle;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+} 
+.badge {
+  background-color: green;
+  color: white;
+  padding: 4px 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+.tarjeta-perfil{
+  background-color: #25253A;
+  color: white;
+  border-radius: 16px;
+  padding: 24px;
+}
+.perfil-aside{
+  background-color: #1A1A2E;
+  border-radius: 16px;
+  padding: 20px;
+}
+.nombre-usuario{
+  color: white;
+}
+.menu-perfil {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.menu-perfil a {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* 
+   A partir de acá se agranda la pantalla: se pasa de
+   columna a fila, se muestra el menú horizontal, y asi */
+@media (min-width: 768px) {
+  .contenedor-tarjetas {
+  flex-direction: row; /*pone los elementos en fila horizontal o sea uno al lado del otro.*/
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.tarjeta {
+  flex: 1;      /* cada tarjeta ocupa el mismo espacio disponible */
+  min-width: 0;
+}
+
+.link-tarjeta {
+  flex: 1;
+  min-width: 0;
+}
+
+  /* nav: vuelve a fila, logo a la izq y menú a la der */
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .nav-derecha {
+    flex-direction: row;
+    width: auto;
+    gap: 20px;
+  }
+
+  .menu {
+    display: flex;         /* en el menú siempre está visible */
+    flex-direction: row;
+    gap: 20px;
+    width: auto;
+  }
+
+  .hamburguesa {
+    display: none;         /* para q no sea vea el botón  */
+  }
+
+  /* hero: título más grande, botones en fila */
+  .hero {
+    padding: 100px 20px;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-botones {
+    flex-direction: row;
+  }
+
+  /* torneos activos: más padding, tarjetas en fila */
+  .torneos-activos {
+    padding: 60px 40px;
+  }
+
+  .seccion-header h2 {
+    font-size: 28px;
+  }
+
+  .contenedor-tarjetas {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  /* como funciona: pasos en fila */
+  .como-funciona {
+    padding: 80px 40px;
+  }
+
+  .como-funciona h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+
+  /* en compu: los 5 pasos en fila horizontal
+   flex: 0 0 180px significa: no crecer, y despues q no se achique ,
+   siempre 180px de ancho — así todos son exactamente iguales
+   y los círculos quedan del mismo tamaño */
+.pasos {
+  flex-direction: row;
+  align-items: flex-start; /* se alinean desde arriba, no se estiran */
+  justify-content: center;
+  gap: 20px;
+}
+
+.paso {
+  flex: 0 0 180px;  /* ancho fijo igual para todos */
+  max-width: 180px;
+}
+
+  /* footer: logo a la izq, links a la der */
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 30px 40px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  /* login: más padding en la tarjeta */
+  .tarjetalogin {
+    padding: 48px 40px;
+  }
+
+  .tarjetalogin h2 {
+    font-size: 26px;
+    margin-bottom: 32px;
+  }
+
+  /* busqueda: filtros a la izq, lista a la der, en fila */
+  .busqueda-header {
+    padding: 40px 40px 20px;
+  }
+
+  .busqueda-header h1 {
+    font-size: 32px;
+  }
+
+  .contenido-torneos {
+    display: grid;                        /* Grid en vez de Flexbox:porque son dos columnas con distintos paples */
+    grid-template-columns: 220px 1fr;      /* columna fija para filtros + columna flexible para resultados,lo saque de google  */
+    gap: 30px;
+    padding: 30px 40px;
+  }
+  .contenido-perfil {
+    display: flex;                       /* flex para que las tarjetas ocupen gran parte del la pantalla*/
+    grid-template-columns: 220px;      
+    gap: 30px;
+    padding: 30px 40px;
+    margin: 60px;
+  }
+    .info-torneo {
+    padding: 80px 40px;
+    
+  }
+
+  .info-torneo h1 {
+    font-size: 40px;
+    
+  }
+/* .filtros y .lista-torneos ya no necesitan flex acá:
+   el ancho de ambas columnas lo define grid-template-columns
+   en .contenido-torneos */
+.tarjeta-crear {
+    padding: 48px 40px;
+  }
+}
